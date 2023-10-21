@@ -18,7 +18,7 @@ class Button extends Component
      *
      * @return void
      */
-    public function __construct($type = 'link', $style = 'primary', $size = 'md', $button, $classes='')
+    public function __construct($button, $type = 'link', $style = 'primary', $size = 'md', $classes='')
     {
         $this->type = $type;
         $this->style = $style;
