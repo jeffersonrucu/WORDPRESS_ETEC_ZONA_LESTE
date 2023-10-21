@@ -22,11 +22,14 @@ jobs:
       - name: Install Composer dependencies theme
         run: cd ./www/wordpress/themes/eteczonaleste && composer install
 
-      - name: Lint PHP files
-        uses: overtrue/phplint@main
-        with:
-          path: ./www/wordpress/themes/eteczonaleste
-          options: --exclude=vendor
+      - name: Install Lint PHP Global
+        run: composer global require --no-progress overtrue/phplint
+
+      - name: Run Lint PHP
+        run: cd ./www/wordpress/themes/eteczonaleste && phplint'
+
+      - name: Set PHP Lint Status Check
+        run: echo ::set-output name=lint_result_php::success
 
   assets-lint:
     name: Linting with Node.js
@@ -49,10 +52,13 @@ jobs:
         run: cd ./www/wordpress/themes/eteczonaleste && npm run lint:js
 
       - name: Set JS Lint Status Check
-        run: echo ::set-output name=lint_result::success
+        run: echo ::set-output name=lint_result_js::success
 
       - name: Run CSS Lint
         run: cd ./www/wordpress/themes/eteczonaleste && npm run lint:css
+
+      - name: Set CSS Lint Status Check
+        run: echo ::set-output name=lint_result_css::success
 
   approvals:
     name: Check Linting Results
@@ -63,7 +69,11 @@ jobs:
 
     steps:
       - name: Check PHP Lint Result
-        run: echo "PHP Lint Result ${{needs.php-lint.outputs.lint_result}}"
+        run: echo "PHP Lint Result ${{needs.php-lint.outputs.lint_result_php}}"
 
-      - name: Check Lint Assets Result
-        run: echo "Assets Lint Result ${{needs.assets-lint.outputs.lint_result}}"
+      - name: Check Lint JS Result
+        run: echo "Assets Lint Result JS ${{needs.assets-lint.outputs.lint_result_js}}"
+
+      - name: Check Lint CSS Result
+        run: echo "Assets Lint Result CSS ${{needs.assets-lint.outputs.lint_result_css}}"
+
