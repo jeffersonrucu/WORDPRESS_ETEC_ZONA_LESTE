@@ -1,0 +1,86 @@
+name: lint
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  php-lint:
+    name: Linting with overtrue/phplint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lint PHP files
+
+        uses: overtrue/phplint@main
+        with:
+          path: ./www/wordpress/themes/eteczonaleste/
+          options: --exclude=vendor
+
+  js-lint:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Access Theme Directory
+      run: cd ./www/wordpress/themes/eteczonaleste/
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install Node.js Dependencies
+      run: npm install
+
+    - name: Run Node Lint
+      run: npm run lint:js
+
+    - name: Set Node Lint Status Check
+      run: echo ::set-output name=lint_result::success
+
+  css-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Access Theme Directory
+      run: cd ./www/wordpress/themes/eteczonaleste/
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install Node.js Dependencies
+      run: npm install
+
+    - name: Run Node Lint
+      run: npm run lint:css
+
+    - name: Set Node Lint Status Check
+      run: echo ::set-output name=lint_result::success
+
+  approvals:
+    runs-on: ubuntu-latest
+    needs:
+      - php-lint
+      - js-lint
+      - css-lint
+
+    steps:
+    - name: Check PHP Lint Result
+      run: echo "Composer Lint Result ${{needs.php-lint.outputs.lint_result}}"
+
+    - name: Check JS Lint Result
+      run: echo "Node Lint Result ${{needs.js-lint.outputs.lint_result}}"
+
+    - name: Check CSS Lint Result
+      run: echo "Node Lint Result ${{needs.css-lint.outputs.lint_result}}"
