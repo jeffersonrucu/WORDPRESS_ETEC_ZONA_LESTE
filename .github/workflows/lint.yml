@@ -16,17 +16,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use PHP 8.0
-        uses: shivammathur/setup-php@v2
+      - name: Lint PHP files
+        uses: overtrue/phplint@main
         with:
-          php-version: 8.0
-          extensions: mbstring, zip
-
-      - name: Install Lint PHP Global
-        run: composer global require --no-progress overtrue/phplint
-
-      - name: Run Lint PHP
-        run: cd ./www/wordpress/themes/eteczonaleste && phplint'
+          path: .
+          options: --exclude=vendor
 
       - name: Set PHP Lint Status Check
         run: echo ::set-output name=lint_result_php::success
