@@ -8,19 +8,19 @@ on:
 
 jobs:
   php-lint:
-    name: Linting with overtrue/phplint
+    name: Lint PHP
 
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
       - name: Use PHP 8.0
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.0
           extensions: mbstring, zip
-
-      - name: Install Composer dependencies theme
-        run: cd ./www/wordpress/themes/eteczonaleste && composer install
 
       - name: Install Lint PHP Global
         run: composer global require --no-progress overtrue/phplint
@@ -32,7 +32,7 @@ jobs:
         run: echo ::set-output name=lint_result_php::success
 
   assets-lint:
-    name: Linting with Node.js
+    name: Lint Assets with Stylelint and ESLint
 
     runs-on: ubuntu-latest
 
