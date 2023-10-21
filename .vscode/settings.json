@@ -1,0 +1,15 @@
+{
+  "editor.fontSize": 12,
+  "files.exclude": {
+    "vendor": true,
+    "database": false,
+    "www/wordpress/plugins/akismet": true,
+    "www/wordpress/plugins/hello.php": true,
+    "www/wordpress/plugins/index.php": true,
+    "www/wordpress/themes/twentytwentyone": true,
+    "www/wordpress/themes/twentytwentythree": true,
+    "www/wordpress/themes/twentytwentytwo": true,
+    "www/wordpress/themes/index.php": true,
+    "**/*.lock": true
+  }
+}

@@ -1,0 +1,26 @@
+.banner-secondary__wysiwyg {
+    @apply
+        text-black-light
+        dark:text-black-dark
+        mb-12
+    ;
+}
+
+.banner-secondary__wysiwyg h2,
+.banner-secondary__wysiwyg h3,
+.banner-secondary__wysiwyg h4 {
+    @apply
+        text-[32px]
+        leading-[38px]
+        lg:leading-8
+        font-bold
+        mb-7
+    ;
+}
+
+.banner-secondary__wysiwyg p {
+    @apply
+        text-[#8B8B8B]
+        dark:text-black-dark
+    ;
+}

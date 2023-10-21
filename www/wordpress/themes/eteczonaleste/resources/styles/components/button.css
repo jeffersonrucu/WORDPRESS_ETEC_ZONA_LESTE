@@ -1,0 +1,26 @@
+.btn {
+    @apply
+        rounded-3xl
+        font-bold
+    ;
+}
+
+.btn--primary {
+    @apply
+        bg-primary-light
+        text-white-light
+        transition-all
+        duration-300
+
+        hover:brightness-90
+
+        dark:bg-primary-dark
+    ;
+}
+
+.btn--md {
+    @apply
+        py-[0.65rem]
+        px-[2.188rem]
+    ;
+}

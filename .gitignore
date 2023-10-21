@@ -1,0 +1,25 @@
+#default
+.env
+
+# themes
+www/wordpress/themes/*
+!www/wordpress/themes/eteczonaleste/
+
+# plugins
+www/wordpress/plugins
+
+# uploads
+www/wordpress/uploads
+
+# config
+www/config/wp-config.php
+
+# composer
+composer.lock
+vendor
+src
+
+# docker
+database
+
+.DS_Store

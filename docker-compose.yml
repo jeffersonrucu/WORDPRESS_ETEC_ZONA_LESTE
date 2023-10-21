@@ -1,0 +1,36 @@
+version: '3'
+services:
+  database_etec:
+    platform: linux/x86_64
+    image: mysql:5.7
+    volumes:
+      - ./database:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      - database_etec
+    volumes:
+      - ./www/wordpress/themes/:/var/www/html/wp-content/themes/
+      - ./www/wordpress/plugins/:/var/www/html/wp-content/plugins/
+      - ./www/wordpress/uploads/:/var/www/html/wp-content/uploads/
+      - ./www/config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./www/config/wp-config.php:/var/www/html/wp-config.php
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: database_etec:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
+
+volumes:
+  database:

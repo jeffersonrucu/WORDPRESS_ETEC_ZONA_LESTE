@@ -1,0 +1,19 @@
+html.font-level--1 {
+    @apply text-[12.5px] md:text-[16px];
+}
+
+html.font-level--2 {
+    @apply text-[13px] md:text-[16.5px];
+}
+
+html.font-level--3 {
+    @apply text-[14px] md:text-[17px];
+}
+
+html.font-level--4 {
+    @apply text-[14.5px] md:text-[17.5px];
+}
+
+html.font-level--5 {
+    @apply text-[15px] md:text-[18px];
+}

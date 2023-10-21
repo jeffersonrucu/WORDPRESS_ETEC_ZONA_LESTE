@@ -1,0 +1,7 @@
+.interface-interface-skeleton__content {
+    @apply px-16;
+}
+
+.is-root-container {
+    @apply flex flex-col gap-12;
+}

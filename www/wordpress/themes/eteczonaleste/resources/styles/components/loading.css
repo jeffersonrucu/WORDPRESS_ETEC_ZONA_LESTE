@@ -1,0 +1,21 @@
+.loading-spinner {
+    @apply
+        -z-10
+        opacity-0
+        fixed
+        left-0
+        top-0
+        w-full
+        h-full
+      bg-secondary-light
+        dark:bg-secondary-dark
+        flex
+        justify-center
+        items-center
+        transition-all
+        duration-300;
+}
+
+.loading-spinner.show {
+    @apply opacity-100 z-50;
+}

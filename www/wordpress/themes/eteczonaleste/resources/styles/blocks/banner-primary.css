@@ -1,0 +1,51 @@
+.banner-primary.image-right .bg-gradient-custom {
+    @apply
+        lg:max-w-[68%]
+        lg:pr-36
+    ;
+}
+
+.banner-primary.image-right figure {
+    @apply
+        lg:!max-w-[600px]
+        lg:!w-full
+        lg:m-0
+    ;
+}
+
+.banner-primary__wysiwyg {
+    @apply text-white-light;
+}
+
+.banner-primary__wysiwyg h2,
+.banner-primary__wysiwyg h3,
+.banner-primary__wysiwyg h4 {
+    @apply
+        text-3xl
+        font-bold
+    ;
+}
+
+.banner-primary__wysiwyg .category {
+    @apply
+        text-base
+        font-bold
+        text-[#B2B6BB]
+        uppercase
+    ;
+}
+
+@media screen and (min-width: 976px) {
+    .banner-primary.image-right {
+        background: linear-gradient(90deg, #141414 89.36%, rgba(20, 20, 20, 0.85) 89.37%, rgba(20, 20, 20, 0.00) 100%) !important;
+
+    }
+
+    .banner-primary.image-right .bg-gradient-custom {
+        background: linear-gradient(90deg, #141414 89.36%, rgba(20, 20, 20, 0.85) 89.37%, rgba(20, 20, 20, 0.00) 100%) !important;
+    }
+
+    .banner-primary.image-right figure {
+        left: initial !important;
+    }
+}

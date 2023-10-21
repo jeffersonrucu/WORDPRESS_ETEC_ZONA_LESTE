@@ -1,0 +1,90 @@
+.courses-listing__wysiwyg {
+    @apply
+        max-w-[1036px]
+        mx-auto
+    ;
+}
+
+.courses-listing__wysiwyg h2,
+.courses-listing__wysiwyg h3,
+.courses-listing__wysiwyg h4 {
+    @apply
+        text-[32px]
+        font-bold
+        mb-8
+        text-black-light
+
+        dark:text-black-dark;
+    ;
+}
+
+.courses-listing__wysiwyg p {
+    @apply text-[#8B8B8B] dark:text-[#E1E1E1];
+}
+
+.courses-listing__card {
+    @apply
+        bg-secondary-light
+        rounded-[20px]
+        w-full
+        max-w-[328px]
+        py-8
+        px-10
+        mx-auto
+        transition-all
+        duration-500
+
+        dark:drop-shadow-none
+        dark:bg-secondary-dark
+    ;
+}
+
+.courses-listing__card:hover {
+    @apply cursor-pointer;
+    box-shadow: 0px 11px 19px 0px rgba(0, 0, 0, 0.12);
+}
+
+.dark .courses-listing__card:hover {
+    box-shadow: 0px 11px 19px 0px rgba(255, 255, 255, 0.05);
+}
+
+.courses-listing__card__icon {
+    @apply
+        bg-primary-light
+        rounded-xl
+        w-fit
+        p-[18px]
+        mb-5
+    ;
+}
+
+.courses-listing__card__icon img {
+    @apply
+        w-7
+        h-7
+    ;
+}
+
+.courses-listing__card__title {
+    @apply
+        mb-5
+        text-black-light
+        dark:text-black-dark
+
+        after:content-['']
+        after:block
+        after:w-12
+        after:h-[2px]
+        after:mt-5
+        after:bg-primary-light
+    ;
+}
+
+.courses-listing__card__exception {
+    @apply
+        text-sm
+        text-neutral-500
+
+        dark:text-black-dark
+    ;
+}

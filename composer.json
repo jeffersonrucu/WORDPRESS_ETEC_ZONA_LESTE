@@ -1,0 +1,40 @@
+{
+    "name": "wordpress-theme/etec_sage",
+    "authors": [
+        {
+            "name": "Jefferson Oliveira",
+            "email": "jefferoidtex7@gmail.com"
+        },
+        {
+            "name": "Emily Leme",
+            "email": "emilyleme.dev@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "wpackagist-plugin/wordpress-seo":"20.8",
+        "wpackagist-plugin/safe-svg":"2.1.1"
+    },
+    "extra": {
+        "installer-paths": {
+            "www/wordpress/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wordpress-install-dir": "wordpress"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

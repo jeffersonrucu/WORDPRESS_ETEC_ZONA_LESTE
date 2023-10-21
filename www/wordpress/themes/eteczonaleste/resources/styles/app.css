@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Global */
+@import 'global/base.css';
+
+/* Components */
+@import 'components/loading.css';
+@import 'components/accessibility-bar.css';
+@import 'components/nav-bar-primary.css';
+@import 'components/button.css';
+
+/* Sections */
+@import 'sections/header.css';
+
+/* Blocks */
+@import 'blocks/banner-primary.css';
+@import 'blocks/banner-secondary.css';
+@import 'blocks/courses-listing.css';
