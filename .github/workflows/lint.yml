@@ -19,7 +19,7 @@ jobs:
       - name: Lint PHP files
         uses: overtrue/phplint@main
         with:
-          path: .
+          path: ./www/wordpress/themes/eteczonaleste
           options: --exclude=vendor
 
       - name: Set PHP Lint Status Check
