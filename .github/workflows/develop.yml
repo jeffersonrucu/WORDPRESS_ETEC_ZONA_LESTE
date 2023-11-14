@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2 # Atualize para a versão mais recente
 
     - name: Use PHP 8.2
       uses: shivammathur/setup-php@v2
@@ -20,9 +20,14 @@ jobs:
         extensions: mbstring, zip
 
     - name: Use Node.js 16
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3 # Atualize para a versão mais recente
       with:
         node-version: '16'
+
+    - name: Install Composer
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        sudo mv composer.phar /usr/local/bin/composer
 
     - name: 🔨 Build Project
       run: |
