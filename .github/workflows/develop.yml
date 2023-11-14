@@ -31,10 +31,11 @@ jobs:
 
     - name: 🔨 Build Project
       run: |
-        cd ./www/wordpress/themes/eteczonaleste && npm install
-        cd ./www/wordpress/themes/eteczonaleste && npm run build
-        cd ./www/wordpress/themes/eteczonaleste && composer install --ignore-platform-reqs
-        cd ./www/wordpress/themes/eteczonaleste && rm -rf node_modules
+        cd ./www/wordpress/themes/eteczonaleste &&
+        npm install &&
+        npm run build &&
+        composer install --ignore-platform-reqs &&
+        rm -rf node_modules &&
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
