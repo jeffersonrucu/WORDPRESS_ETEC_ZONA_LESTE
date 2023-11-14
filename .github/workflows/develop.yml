@@ -35,7 +35,7 @@ jobs:
         npm install &&
         npm run build &&
         composer install --ignore-platform-reqs &&
-        rm -rf node_modules &&
+        rm -rf node_modules
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
