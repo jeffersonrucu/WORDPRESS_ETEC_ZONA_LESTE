@@ -26,7 +26,7 @@ class ComponentAccessibilityBar {
                 'guide'         : element.querySelector('[data-click="guide-accessibility"]'),
                 'contrast'      : element.querySelector('[data-click="contrast-accessibility"]'),
                 'fontsizeup'    : element.querySelector('[data-click="fontsizeup-accessibility"]'),
-                'fontsizedown'  : element.querySelector('[data-click="fontsizedown-accessibility"')
+                'fontsizedown'  : element.querySelector('[data-click="fontsizedown-accessibility"'),
             }
 
             button.guide.addEventListener('click', () => {
