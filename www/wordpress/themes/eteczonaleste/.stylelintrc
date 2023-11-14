@@ -2,5 +2,10 @@
   "extends": [
     "@roots/sage/stylelint-config",
     "@roots/bud-tailwindcss/stylelint-config"
-  ]
+  ],
+  "rules": {
+    "media-feature-range-notation": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null
+  }
 }
