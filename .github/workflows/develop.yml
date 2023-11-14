@@ -1,0 +1,41 @@
+name: Deploy Ambiente de Desenvolvimento
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: Use PHP 8.2
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2
+        extensions: mbstring, zip
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: 🔨 Build Project
+      run: |
+        cd ./www/wordpress/themes/eteczonaleste && npm install
+        cd ./www/wordpress/themes/eteczonaleste && npm run build
+        cd ./www/wordpress/themes/eteczonaleste && composer install --ignore-platform-reqs
+        cd ./www/wordpress/themes/eteczonaleste && rm -rf node_modules
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.server }}
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        local-dir: './www/wordpress/themes/'
+        server-dir: './dev/wp-content/themes/'
