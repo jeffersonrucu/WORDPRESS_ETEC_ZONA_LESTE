@@ -38,10 +38,10 @@ jobs:
         rm -rf node_modules
 
     - name: 📂 Sync files
-      uses: sebastianpopp/ftp-action@releases/v2
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        host: ${{ secrets.server }}
-        user: ${{ secrets.username }}
+        server: ${{ secrets.server }}
+        username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        localDir: './www/wordpress/themes/'
-        remoteDir: './dev/wp-content/themes/'
+        local-dir: './www/wordpress/themes/'
+        server-dir: './dev/wp-content/themes/'
