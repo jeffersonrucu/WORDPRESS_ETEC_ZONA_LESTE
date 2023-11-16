@@ -38,7 +38,7 @@ jobs:
         rm -rf node_modules
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
       with:
         server: ${{ secrets.server }}
         username: ${{ secrets.username }}
