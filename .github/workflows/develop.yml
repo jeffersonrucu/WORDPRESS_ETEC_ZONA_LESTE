@@ -39,7 +39,7 @@ jobs:
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      with:
+      env:
         FTP_SERVER: ${{ secrets.server }}
         FTP_USERNAME: ${{ secrets.username }}
         FTP_PASSWORD: ${{ secrets.password }}
