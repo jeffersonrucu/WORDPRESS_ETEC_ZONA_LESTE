@@ -40,8 +40,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       with:
-        server: ${{ secrets.server }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
-        local-dir: './www/wordpress/themes/'
-        server-dir: './dev/wp-content/themes/'
+        FTP_SERVER: ${{ secrets.server }}
+        FTP_USERNAME: ${{ secrets.username }}
+        FTP_PASSWORD: ${{ secrets.password }}
+        LOCAL_DIR: './www/wordpress/themes/'
+        REMOTE_DIR: './dev/wp-content/themes/'
