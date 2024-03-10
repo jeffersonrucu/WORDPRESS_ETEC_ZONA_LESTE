@@ -1,5 +1,5 @@
 .header__button-hamburger {
-    @apply md:hidden;
+    @apply lg:hidden;
 }
 
 .header__button-hamburger span {
@@ -50,11 +50,11 @@
         dark:bg-white-dark
         dark:text-black-dark
 
-        md:relative
-        md:right-0
-        md:w-auto
-        md:h-auto
-        md:transition-none
+        lg:relative
+        lg:right-0
+        lg:w-auto
+        lg:h-auto
+        lg:transition-none
     ;
 }
 
@@ -63,7 +63,7 @@
         right-0
         pt-[3.3rem]
 
-        md:pt-0
+        lg:pt-0
     ;
 }
 
@@ -71,6 +71,6 @@
     @apply
         flex-col
 
-        md:flex-row
+        lg:flex-row
     ;
 }

@@ -2,8 +2,6 @@
   use Log1x\Navi\Navi;
 
   $nav = false;
-  $logo = get_field('logo', 'option');
-  $header = get_field('header', 'option');
 
   if($header['select_nav']) {
     $navigation = (new Navi())->build($header['select_nav']);

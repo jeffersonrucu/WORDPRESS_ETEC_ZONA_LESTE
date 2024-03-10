@@ -6,11 +6,17 @@ import { Footer } from '@scripts/sections/Footer';
 import { BannerHero } from '@scripts/blocks/BannerHero';
 
 import { ComponentAccessibilityBar } from '@scripts/components/AccessibilityBar';
+import { RemoveEvent } from '@scripts/commons/RemoveEvent';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
+
+  /**
+   * Imports scripts from commons
+   */
+  new RemoveEvent()
 
   /**
    * Imports scripts from sections
@@ -23,6 +29,9 @@ domReady(async () => {
    */
   new BannerHero();
 
+  /**
+   * Imports scripts from components
+   */
   new ComponentAccessibilityBar()
 
 });

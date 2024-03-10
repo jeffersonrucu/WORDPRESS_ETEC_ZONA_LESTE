@@ -17,11 +17,13 @@
                 {!! $content['wysiwygContent'] !!}
             </div>
 
-            <div>
-                <x-button
-                    :button="$content['button']"
-                />
-            </div>
+            @notempty($content['button'])
+                <div>
+                    <x-button
+                        :button="$content['button']"
+                    />
+                </div>
+            @endnotempty
         </div>
     </div>
 </section>

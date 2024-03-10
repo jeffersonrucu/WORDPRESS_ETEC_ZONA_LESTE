@@ -1,0 +1,3 @@
+.wp-block-image img {
+    @apply rounded-3xl;
+}

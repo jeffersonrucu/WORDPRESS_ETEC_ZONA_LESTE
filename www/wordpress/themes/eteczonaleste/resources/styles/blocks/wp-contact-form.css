@@ -1,0 +1,50 @@
+.form-contact {
+    @apply
+        w-full
+        max-w-[560px]
+        p-4
+        text-white-light
+        flex
+        flex-col
+        gap-0
+        mx-auto
+    ;
+}
+
+.form-contact input {
+    @apply
+        w-full
+        rounded-[18px]
+        py-3
+        px-4
+        text-white
+        bg-black-light
+    ;
+}
+
+.form-contact label {
+    @apply
+        sr-only
+    ;
+}
+
+.form-contact textarea {
+    @apply
+        mt-3
+        w-full
+        rounded-3xl
+        text-white
+        bg-black-light
+        px-5
+        py-5
+    ;
+}
+
+.form-contact [type="submit"] {
+    @apply
+        text-white
+        bg-black-light
+        mt-8
+        hover:cursor-pointer
+    ;
+}

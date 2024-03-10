@@ -69,6 +69,24 @@ class OptionsTheme extends Field
                         ],
                     ])
                 ->addAccordion('accordion_data_header_end')->endpoint()
+            ->endGroup()
+
+            // FOOTER CONFIG
+            ->addGroup('footer', [
+                'label' => 'Footer',
+            ])
+                ->addAccordion('accordion_data_footer', [
+                    'label' => 'Configurações',
+                    'instructions' => 'Preencha corretamente todos os dados',
+                ])
+                    ->addText('copyright', [
+                        'label' => 'Texto de direitos autorais',
+                    ])
+
+                    ->addText('developed', [
+                        'label' => 'Desenvolvido por ?',
+                    ])
+                ->addAccordion('accordion_data_footer_end')->endpoint()
             ->endGroup();
 
         return $optionsTheme->build();

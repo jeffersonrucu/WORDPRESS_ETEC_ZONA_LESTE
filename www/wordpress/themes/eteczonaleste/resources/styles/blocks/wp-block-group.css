@@ -1,0 +1,32 @@
+.wp-block-group h1,
+.wp-block-group h2,
+.wp-block-group h3 {
+    @apply
+        text-[32px]
+        font-bold
+        mb-8
+        text-black-light
+        dark:text-black-dark;
+    ;
+}
+
+.wp-block-group p {
+    @apply text-[#8B8B8B] dark:text-[#E1E1E1];
+}
+
+.wp-block-group a {
+  @apply !text-blue-500 !underline;
+}
+
+.wp-block-group ul {
+    @apply
+        text-black-light
+        dark:text-black-dark
+    ;
+}
+
+.wp-block-group table {
+    @apply
+        bg-black-dark
+    ;
+}

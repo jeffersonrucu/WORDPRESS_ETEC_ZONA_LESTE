@@ -153,7 +153,6 @@ class CoursesListing extends Block
                 ->addRepeater('repeater_posts', [
                     'label' => 'Grid de Postagens',
                     'instructions' => 'A quantidade ideal de cursos é 6',
-                    'required' => 1,
                     'collapsed' => 'post',
                     'min' => 1,
                     'max' => 6,
@@ -164,7 +163,6 @@ class CoursesListing extends Block
                     ->addPostObject('post', [
                         'label' => 'Curso',
                         'instructions' => 'Selecione o curso desejado',
-                        'required' => 1,
                         'post_type' => ['cursos']
                     ])
 
@@ -189,6 +187,12 @@ class CoursesListing extends Block
                 'open' => 0,
                 'multi_expand' => 0,
             ])
+                ->addTrueFalse('all_courses', [
+                    'label' => 'Exibir todos os cursos',
+                    'ui_on_text' => 'Sim',
+                    'ui_off_text' => 'Não',
+                    'default_value' => 0,
+                ])
             ->addAccordion('accordion_field_advanced_end')->endpoint();
 
         return $coursesListing->build();
@@ -206,7 +210,7 @@ class CoursesListing extends Block
     public function advance()
     {
         return [
-            'imageSide' => get_field('image_side'),
+            'allCourses' => get_field('all_courses'),
         ];
     }
 

@@ -31,6 +31,6 @@
     "@roots/sage": "6.12.2"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001551"
+    "caniuse-lite": "^1.0.30001565"
   }
 }
