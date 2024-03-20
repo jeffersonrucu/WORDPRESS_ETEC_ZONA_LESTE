@@ -1,0 +1,16 @@
+.content-search__summary p {
+    @apply
+        text-[#8B8B8B]
+        dark:text-black-dark
+    ;
+}
+
+.content-search__card {
+    @apply transition-all duration-500 rounded-3xl;
+}
+
+.content-search__card:hover {
+    @apply cursor-pointer;
+
+    box-shadow: 0 11px 19px 0 rgba(0, 0, 0, 0.12);
+}

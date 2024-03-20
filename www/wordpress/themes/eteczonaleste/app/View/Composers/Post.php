@@ -34,7 +34,7 @@ class Post extends Composer
      *
      * @return string
      */
-    public function title()
+    private function title()
     {
         if ($this->view->name() !== 'partials.page-header') {
             return get_the_title();

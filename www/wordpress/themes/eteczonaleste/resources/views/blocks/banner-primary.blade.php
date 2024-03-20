@@ -11,17 +11,19 @@
     </figure>
 
     <div class="container z-10 relative">
-        <div class="flex flex-col justify-center h-[80vh] max-h-[528px] bg-gradient-custom">
+        <div class="flex flex-col justify-center min-h-[80vh] max-h-[528px] bg-gradient-custom">
             <div class="banner-primary__wysiwyg max-w-[737px] mb-28 md:mb-11">
                 <p class="category mb-6"> {{ $content['category'] }} </p>
                 {!! $content['wysiwygContent'] !!}
             </div>
 
-            <div>
-                <x-button
-                    :button="$content['button']"
-                />
-            </div>
+            @notempty($content['button'])
+                <div>
+                    <x-button
+                        :button="$content['button']"
+                    />
+                </div>
+            @endnotempty
         </div>
     </div>
 </section>

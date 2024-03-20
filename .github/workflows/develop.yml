@@ -1,0 +1,47 @@
+name: Deploy Ambiente de Desenvolvimento
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2 # Atualize para a versão mais recente
+
+    - name: Use PHP 8.2
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2
+        extensions: mbstring, zip
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3 # Atualize para a versão mais recente
+      with:
+        node-version: '16'
+
+    - name: Install Composer
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        sudo mv composer.phar /usr/local/bin/composer
+
+    - name: 🔨 Build Project
+      run: |
+        cd ./www/wordpress/themes/eteczonaleste &&
+        npm install &&
+        npm run build &&
+        composer install --ignore-platform-reqs &&
+        rm -rf node_modules
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.server }}
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        local-dir: './www/wordpress/themes/'
+        server-dir: './dev/wp-content/themes/'

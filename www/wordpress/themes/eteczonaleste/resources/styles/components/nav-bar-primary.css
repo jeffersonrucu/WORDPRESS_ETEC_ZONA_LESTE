@@ -28,3 +28,61 @@
         after:translate-y-1
     ;
 }
+
+.nav-bar-primary__link--submenu {
+    @apply
+        hover:after:opacity-0
+    ;
+}
+
+.nav-bar-primary__link--submenu svg {
+    @apply
+        w-[10px]
+        h-[10px]
+        transition-all
+        duration-500
+    ;
+}
+
+.nav-bar-primary__box-submenu {
+    @apply
+        flex
+        items-center
+        flex-col
+    ;
+}
+
+.nav-bar-primary__box-submenu:hover .nav-bar-primary__link--submenu svg,
+.nav-bar-primary__box-submenu.active .nav-bar-primary__link--submenu svg {
+    @apply
+        rotate-180
+    ;
+}
+
+.nav-bar-primary__box-submenu:hover .nav-bar-primary__submenu,
+.nav-bar-primary__box-submenu.active .nav-bar-primary__submenu {
+    @apply
+        flex
+        z-10
+    ;
+}
+
+.nav-bar-primary__submenu {
+    @apply
+        md:absolute
+        top-[1.6rem]
+        -left-5
+        right-0
+        m-auto
+        w-[17.5rem]
+        bg-secondary-light
+        dark:bg-secondary-dark
+        py-5
+        px-8
+        rounded-[14px]
+        hidden
+        !flex-col
+        gap-3
+        -z-10
+    ;
+}

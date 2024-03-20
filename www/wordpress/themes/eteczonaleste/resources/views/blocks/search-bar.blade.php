@@ -4,20 +4,19 @@
 >
     <div class="container">
         <div class="flex justify-center items-center flex-col md:flex-row gap-6 md:gap-12">
-            <h3 class="text-primary-light dark:text-primary-dark font-bold text-xl text-center">Realize uma pesquisa minuciosa para <br> reunir dados relevantes</h3>
             <form
-                class="relative w-full max-w-[400px]"
+                class="relative w-full max-w-[560px]"
                 role="search"
                 method="get"
                 action="{{ esc_url(home_url( '/' )) }}"
             >
                 <fieldset>
-                    <label class="sr-only">Realize sua pesquisa digitando aqui</label>
+                    <label class="sr-only">O que está buscando?</label>
 
                     <input
                         class="bg-white-light dark:bg-white-dark text-[#919FAE] text- py-3 pl-14 pr-4 rounded-[40px] w-full focus-visible:outline-primary-light dark:focus-visible:outline-primary-dark"
                         type="search"
-                        placeholder="Digite Aqui"
+                        placeholder="O que está buscando?"
                         value="{{ get_search_query() }}"
                         name="s"
                     />

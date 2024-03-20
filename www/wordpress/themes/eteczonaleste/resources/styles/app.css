@@ -13,8 +13,21 @@
 
 /* Sections */
 @import 'sections/header.css';
+@import 'sections/footer.css';
 
 /* Blocks */
 @import 'blocks/banner-primary.css';
 @import 'blocks/banner-secondary.css';
 @import 'blocks/courses-listing.css';
+@import 'blocks/wp-wpmapblockrender.css';
+@import 'blocks/newsletter.css';
+@import 'blocks/listing-courses-filter.css';
+
+/* Partials */
+@import 'partials/content-search.css';
+
+/* Blocks Wordpress */
+@import 'blocks/wp-block-group.css';
+@import 'blocks/wp-block-heading.css';
+@import 'blocks/wp-block-image.css';
+@import 'blocks/wp-contact-form.css';

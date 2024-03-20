@@ -1,5 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 html.font-level--1 {
-    @apply text-[12.5px] md:text-[16px];
+    @apply text-[13px] md:text-[18px];
 }
 
 html.font-level--2 {
@@ -16,4 +20,19 @@ html.font-level--4 {
 
 html.font-level--5 {
     @apply text-[15px] md:text-[18px];
+}
+
+p {
+  @apply leading-7;
+}
+
+h1,
+h2,
+h3 {
+  @apply leading-10;
+}
+
+p a {
+  color: #50a3ff;
+  text-decoration: underline;
 }

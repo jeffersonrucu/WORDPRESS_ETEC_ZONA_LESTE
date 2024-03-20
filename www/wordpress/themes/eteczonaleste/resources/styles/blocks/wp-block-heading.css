@@ -1,0 +1,6 @@
+.wp-block-heading {
+    @apply
+        text-black-light
+        dark:text-black-dark;
+    ;
+}

@@ -1,7 +1,7 @@
 <div class="accessibility-bar fixed top-0 left-0 w-full h-9 bg-secondary dark:bg-secondary-dark z-40" data-component="accessibility-bar">
     <div class="container h-full">
         <div class="flex justify-end items-center h-full gap-12 md:gap-4">
-            <button class="accessibility-bar__btn-animation" data-click="guide-accessibility">
+            <button class="accessibility-bar__btn-animation hidden" data-click="guide-accessibility">
                 <span class="sr-only">Guia de Acessibilidade do site</span>
 
                 <figure aria-hidden="true">

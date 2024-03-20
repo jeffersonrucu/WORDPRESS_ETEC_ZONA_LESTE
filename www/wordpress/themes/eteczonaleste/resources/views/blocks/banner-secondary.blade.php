@@ -4,7 +4,7 @@
 >
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <figure class="overflow-hidden rounded-xl max-w-[467px] mx-auto {{ !$advance['imageSide'] ? 'lg:order-1' : '' }}">
+            <figure class="overflow-hidden rounded-xl max-w-[467px] mx-auto {{ !$advance['imageSide'] ? 'lg:order-1' : 'lg:ml-0' }}">
                 <img
                     class="w-full h-full object-cover"
                     src="{{ $content['image']['url'] }}"
@@ -17,11 +17,13 @@
                     {!! $content['wysiwygContent'] !!}
                 </div>
 
-                <div>
-                    <x-button
-                        :button="$content['button']"
-                    />
-                </div>
+                @notempty($content['button'])
+                  <div>
+                      <x-button
+                          :button="$content['button']"
+                      />
+                  </div>
+                @endnotempty
             </div>
         </div>
     </div>

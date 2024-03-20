@@ -16,7 +16,7 @@ return [
         'cursos' => [
             'enter_title_here' => 'Adicione o nome do curso',
             'menu_icon' => 'dashicons-book-alt',
-            'supports' => ['title', 'editor', 'excerpt'],
+            'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
             'show_in_rest' => true,
             'has_archive' => false,
             'labels' => [
@@ -37,10 +37,14 @@ return [
     */
 
     'taxonomy' => [
-        // 'genre' => [
-        //     'links' => ['book'],
-        //     'meta_box' => 'radio',
-        // ],
+        'format' => [
+            'labels' => [
+                'singular' => ' Formato',
+                'plural' => 'Formatos',
+            ],
+            'links' => ['cursos'],
+            'meta_box' => 'radio',
+        ],
     ],
 
     /*

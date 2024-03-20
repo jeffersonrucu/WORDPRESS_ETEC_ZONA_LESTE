@@ -1,0 +1,37 @@
+.newsletter__wysiwyg {
+  @apply
+      max-w-[1036px]
+      mx-auto
+  ;
+}
+
+.newsletter__wysiwyg h2,
+.newsletter__wysiwyg h3,
+.newsletter__wysiwyg h4 {
+  @apply
+      text-[32px]
+      font-bold
+      mb-8
+      text-black-light
+
+      dark:text-black-dark;
+  ;
+}
+
+.newsletter__wysiwyg p {
+  @apply text-[#8B8B8B] dark:text-[#E1E1E1];
+}
+
+.newsletter .swiper-pagination-bullet-active {
+  @apply bg-primary-light;
+}
+
+.newsletter__card {
+  @apply transition-all duration-500;
+}
+
+.newsletter__card:hover {
+  @apply cursor-pointer;
+
+  box-shadow: 0 11px 19px 0 rgba(0, 0, 0, 0.12);
+}

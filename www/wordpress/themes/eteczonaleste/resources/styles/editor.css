@@ -5,3 +5,11 @@
 .is-root-container {
     @apply flex flex-col gap-12;
 }
+
+.block-editor-writing-flow {
+    @apply bg-gray-100 px-11;
+}
+
+.wp-block-spacer {
+    @apply bg-gray-300;
+}
