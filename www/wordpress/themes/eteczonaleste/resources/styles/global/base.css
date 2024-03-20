@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 html.font-level--1 {
     @apply text-[13px] md:text-[18px];
 }

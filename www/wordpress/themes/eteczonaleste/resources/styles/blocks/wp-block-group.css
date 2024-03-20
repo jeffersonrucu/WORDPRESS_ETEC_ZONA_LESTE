@@ -30,3 +30,9 @@
         bg-black-dark
     ;
 }
+
+.wp-block-group ol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

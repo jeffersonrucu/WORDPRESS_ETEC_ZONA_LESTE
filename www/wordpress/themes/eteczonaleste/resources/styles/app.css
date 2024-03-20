@@ -13,12 +13,15 @@
 
 /* Sections */
 @import 'sections/header.css';
+@import 'sections/footer.css';
 
 /* Blocks */
 @import 'blocks/banner-primary.css';
 @import 'blocks/banner-secondary.css';
 @import 'blocks/courses-listing.css';
 @import 'blocks/wp-wpmapblockrender.css';
+@import 'blocks/newsletter.css';
+@import 'blocks/listing-courses-filter.css';
 
 /* Partials */
 @import 'partials/content-search.css';

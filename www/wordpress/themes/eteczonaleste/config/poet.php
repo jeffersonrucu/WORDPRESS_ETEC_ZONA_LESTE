@@ -37,10 +37,14 @@ return [
     */
 
     'taxonomy' => [
-        // 'genre' => [
-        //     'links' => ['book'],
-        //     'meta_box' => 'radio',
-        // ],
+        'format' => [
+            'labels' => [
+                'singular' => ' Formato',
+                'plural' => 'Formatos',
+            ],
+            'links' => ['cursos'],
+            'meta_box' => 'radio',
+        ],
     ],
 
     /*

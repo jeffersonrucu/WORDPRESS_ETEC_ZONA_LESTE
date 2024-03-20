@@ -85,7 +85,6 @@
     @apply
         text-sm
         text-neutral-500
-
         dark:text-black-dark
     ;
 }

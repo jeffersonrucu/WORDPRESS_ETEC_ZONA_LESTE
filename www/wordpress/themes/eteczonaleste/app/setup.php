@@ -17,6 +17,13 @@ use function Roots\bundle;
  */
 add_action('wp_enqueue_scripts', function () {
     bundle('app')->enqueue();
+
+    wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11', 'all');
+    // Registra o script do Swiper
+    wp_register_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), '11', false);
+
+    // Enfila o script do Swiper
+    wp_enqueue_script('swiper-script');
 }, 100);
 
 /**
