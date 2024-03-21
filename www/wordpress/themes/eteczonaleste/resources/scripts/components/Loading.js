@@ -1,6 +1,6 @@
 class LoadingSpinner {
-    constructor() {
-        this.loading = document.querySelector('[data-js="loading-spinner"]');
+    constructor(element = false) {
+        this.loading = element ? element : document.querySelector('[data-js="loading-spinner-main"]');
     }
 
     show() {

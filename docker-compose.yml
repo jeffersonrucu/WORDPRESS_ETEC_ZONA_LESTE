@@ -23,7 +23,6 @@ services:
       - ./www/wordpress/plugins/:/var/www/html/wp-content/plugins/
       - ./www/wordpress/uploads/:/var/www/html/wp-content/uploads/
       - ./www/config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-      - ./www/config/wp-config.php:/var/www/html/wp-config.php
     restart: always
     environment:
       WORDPRESS_DB_HOST: database_etec:3306

@@ -54,5 +54,5 @@
 
   @endif
 
-  <x-loading-spinner />
+  <x-loading-spinner data-js="loading-spinner-main"/>
 @endsection

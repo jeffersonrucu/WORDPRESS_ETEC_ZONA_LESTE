@@ -1,3 +1,5 @@
+import { LoadingSpinner } from "@scripts/components/Loading";
+
 class ListingCoursesFilter {
     constructor() {
         this.block          = document.querySelector('[data-js="listing-courses-filter"]');
@@ -5,8 +7,9 @@ class ListingCoursesFilter {
         this.filterID       = '';
         this.containerCards = document.querySelector('[data-container="cards"]');
         this.card           = document.querySelector('[data-template="card"]');
+        this.loading        = new LoadingSpinner(this.block.querySelector('[data-js="loading-spinner"]'))
 
-        this.handleFilter()
+        this.handleFilter();
     }
 
     handleFilter() {
@@ -45,11 +48,16 @@ class ListingCoursesFilter {
         this.containerCards.innerHTML = data['html']
     }
 
-    getCourses() {
+    getCourses() {        
+        this.loading.show();
+    
         fetch(`${this.getUrl()}/wp-admin/admin-ajax.php?action=get_fieltered_courses&term=${this.filterID}`)
             .then(response => response.json())
             .then(data => {
-                this.renderCards(data);
+                setTimeout(() => {
+                    this.loading.hidden();
+                    this.renderCards(data);
+                }, 800);
             })
     }
 

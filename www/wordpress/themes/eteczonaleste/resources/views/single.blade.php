@@ -3,5 +3,5 @@
 @section('content')
   @include('partials.page-header')
   @content
-  <x-loading-spinner />
+  <x-loading-spinner data-js="loading-spinner-main"/>
 @endsection
